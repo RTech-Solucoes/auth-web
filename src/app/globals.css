@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+:root {
+  /* Backgrounds */
+  --bg-deep: #020610;
+  --bg-dark: #00071b;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-input: #00071b;
+  --bg-glass: rgba(255, 255, 255, 0.06);
+  --bg-side: #000d2e;
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.1);
+  --border-md: rgba(255, 255, 255, 0.6);
+  --border-sub: rgba(255, 255, 255, 0.08);
+
+  /* Text */
+  --t-white: #ffffff;
+  --t-80: rgba(255, 255, 255, 0.8);
+  --t-60: rgba(255, 255, 255, 0.6);
+  --t-40: rgba(255, 255, 255, 0.4);
+  --t-20: rgba(255, 255, 255, 0.2);
+
+  /* Accent */
+  --accent: #a6c1ed;
+  --accent-sub: rgba(180, 224, 255, 0.6);
+  --cyan: #00c8ff;
+
+  /* Status */
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --info: #60a5fa;
+
+  /* Blues */
+  --blue-1: #002159;
+  --blue-2: #00286b;
+  --blue-3: #0050d4;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background: var(--bg-deep);
+    color: var(--t-white);
+    font-family: var(--font-geist-sans), sans-serif;
+  }
+}
+
+/* Scrollbar customizada — tema dark RTech */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
