@@ -1,5 +1,3 @@
-"use client";
-
 // Props do componente Btn — botão estilizado com o tema RTech
 interface BtnProps {
   label: string;                                    // texto do botão
