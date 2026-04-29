@@ -3,8 +3,8 @@ type BadgeVariant = "success" | "warning" | "danger" | "info" | "neutral";
 
 // Props do Badge
 interface BadgeProps {
-  label: string;           // texto exibido
-  variant?: BadgeVariant;  // estilo de cor (padrão: neutral)
+  label: string; // texto exibido
+  variant?: BadgeVariant; // estilo de cor (padrão: neutral)
 }
 
 // Mapa de estilos por variante — cores do tema RTech
@@ -42,15 +42,17 @@ export function Badge({ label, variant = "neutral" }: BadgeProps) {
   const style = STYLES[variant];
 
   return (
-    <span style={{
-      ...style,
-      display: "inline-flex",
-      alignItems: "center",
-      padding: "2px 10px",
-      borderRadius: 999,
-      fontSize: 12,
-      fontWeight: 500,
-    }}>
+    <span
+      style={{
+        ...style,
+        display: "inline-flex",
+        alignItems: "center",
+        padding: "2px 10px",
+        borderRadius: 999,
+        fontSize: 12,
+        fontWeight: 500,
+      }}
+    >
       {label}
     </span>
   );

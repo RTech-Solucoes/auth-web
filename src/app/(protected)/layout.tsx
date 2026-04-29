@@ -5,11 +5,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 // Layout autenticado — envolve todas as páginas da área protegida
 // Inclui sidebar de navegação e header com dados do usuário
 // Só é renderizado para usuários autenticados (garantido pelo proxy.ts)
-export default function ProtectedLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ProtectedLayout({ children }: { children: React.ReactNode }) {
   return (
     <div style={{ display: "flex", height: "100%", width: "100%", overflow: "hidden" }}>
       {/* Sidebar — navegação lateral fixa */}
@@ -25,13 +21,15 @@ export default function ProtectedLayout({
         </div>
 
         {/* Conteúdo da página — scroll apenas aqui */}
-        <main style={{
-          flex: 1,
-          overflowY: "auto",
-          padding: 24,
-          scrollbarWidth: "thin",
-          scrollbarColor: "rgba(255,255,255,0.1) transparent",
-        }}>
+        <main
+          style={{
+            flex: 1,
+            overflowY: "auto",
+            padding: 24,
+            scrollbarWidth: "thin",
+            scrollbarColor: "rgba(255,255,255,0.1) transparent",
+          }}
+        >
           {/* Breadcrumbs — navegação secundária */}
           <Breadcrumbs />
           {children}

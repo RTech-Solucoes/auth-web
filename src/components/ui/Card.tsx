@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 // Props do Card — container de conteúdo reutilizável
 interface CardProps {
   children: React.ReactNode;
-  className?: string;       // classes extras do Tailwind
+  className?: string; // classes extras do Tailwind
   padding?: "sm" | "md" | "lg"; // tamanho do padding interno (padrão: md)
 }
 

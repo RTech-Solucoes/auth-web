@@ -33,7 +33,5 @@ export function proxy(request: NextRequest) {
 // Define em quais rotas o proxy vai rodar
 // Exclui arquivos estáticos e internos do Next.js
 export const config = {
-  matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|images/).*)",
-  ],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|images/).*)"],
 };

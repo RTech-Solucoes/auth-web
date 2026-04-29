@@ -11,14 +11,14 @@ export interface RegisterRequest {
   email: string;
   password: string;
   firstName?: string; // opcional
-  lastName?: string;  // opcional
+  lastName?: string; // opcional
 }
 
 // Resposta do backend após login ou refresh bem-sucedido
 export interface AuthResponse {
-  accessToken: string;  // token para autenticar requisições
+  accessToken: string; // token para autenticar requisições
   refreshToken: string; // token para renovar o accessToken quando expirar
-  expiresIn: number;    // tempo em segundos até o accessToken expirar
+  expiresIn: number; // tempo em segundos até o accessToken expirar
   user: {
     id: string;
     email: string;
@@ -35,10 +35,10 @@ export interface RefreshRequest {
 // Resposta da introspecção de token — usada por outros microserviços
 // para validar se um token é válido sem acessar o banco diretamente
 export interface IntrospectResponse {
-  active: boolean;          // token ainda é válido?
-  userId?: string;          // ID do usuário dono do token
-  tenantId?: string;        // tenant do usuário
-  permissions?: string[];   // permissões do usuário
+  active: boolean; // token ainda é válido?
+  userId?: string; // ID do usuário dono do token
+  tenantId?: string; // tenant do usuário
+  permissions?: string[]; // permissões do usuário
 }
 
 // Resposta do endpoint GET /auth/me

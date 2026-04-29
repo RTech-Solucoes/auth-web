@@ -6,7 +6,7 @@ import { ROLE_PERMISSIONS as ROLE_PERMS } from "@/types/auth.roles";
 export function hasPermission(
   role: Role | null | undefined,
   permission: Permission,
-  customPermissions: Permission[] = []
+  customPermissions: Permission[] = [],
 ): boolean {
   if (!role) return false;
 
@@ -21,7 +21,7 @@ export function hasPermission(
 export function hasAllPermissions(
   role: Role | null | undefined,
   permissions: Permission[],
-  customPermissions: Permission[] = []
+  customPermissions: Permission[] = [],
 ): boolean {
   return permissions.every((p) => hasPermission(role, p, customPermissions));
 }
@@ -30,7 +30,7 @@ export function hasAllPermissions(
 export function hasAnyPermission(
   role: Role | null | undefined,
   permissions: Permission[],
-  customPermissions: Permission[] = []
+  customPermissions: Permission[] = [],
 ): boolean {
   return permissions.some((p) => hasPermission(role, p, customPermissions));
 }

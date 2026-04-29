@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 // Permite passar qualquer atributo nativo (disabled, type, onClick, etc.)
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "ghost"; // estilo visual (padrão: primary)
-  size?: "sm" | "md" | "lg";                   // tamanho (padrão: md)
+  size?: "sm" | "md" | "lg"; // tamanho (padrão: md)
 }
 
 // Button com classes Tailwind — mais flexível que o Btn para uso com Tailwind
@@ -13,15 +13,15 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export function Button({
   variant = "primary",
   size = "md",
-  className,   // classes extras passadas pelo pai
-  children,    // conteúdo do botão (texto, ícone, etc.)
-  ...props     // demais atributos HTML nativos (disabled, type, etc.)
+  className, // classes extras passadas pelo pai
+  children, // conteúdo do botão (texto, ícone, etc.)
+  ...props // demais atributos HTML nativos (disabled, type, etc.)
 }: ButtonProps) {
   return (
     <button
       className={cn(
         // Classes base — aplicadas em todos os variants e sizes
-        "rounded-md font-medium transition-colors cursor-pointer",
+        "cursor-pointer rounded-md font-medium transition-colors",
         {
           // Variantes de cor
           "bg-blue-500 text-white hover:bg-blue-600": variant === "primary",
@@ -34,7 +34,7 @@ export function Button({
           "px-4 py-2 text-base": size === "md",
           "px-6 py-3 text-lg": size === "lg",
         },
-        className // classes extras do pai sobrescrevem as padrão (twMerge resolve conflitos)
+        className, // classes extras do pai sobrescrevem as padrão (twMerge resolve conflitos)
       )}
       {...props}
     >

@@ -27,9 +27,7 @@ export default function RootLayout({
     <html lang="pt-br" className={`${geistSans.variable} h-full antialiased`}>
       <body className="h-full overflow-hidden bg-[#020610] text-white">
         {/* Providers envolve toda a aplicação com AuthProvider e TenantProvider */}
-        <Providers>
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

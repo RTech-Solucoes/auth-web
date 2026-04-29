@@ -1,12 +1,10 @@
-"use client";
-
 // Props do componente Btn — botão estilizado com o tema RTech
 interface BtnProps {
-  label: string;                                    // texto do botão
-  onClick?: () => void;                             // ação ao clicar (opcional)
-  variant?: "primary" | "outline" | "ghost";        // estilo visual (padrão: primary)
-  full?: boolean;                                   // ocupa 100% da largura? (padrão: false)
-  small?: boolean;                                  // tamanho reduzido? (padrão: false)
+  label: string; // texto do botão
+  onClick?: () => void; // ação ao clicar (opcional)
+  variant?: "primary" | "outline" | "ghost"; // estilo visual (padrão: primary)
+  full?: boolean; // ocupa 100% da largura? (padrão: false)
+  small?: boolean; // tamanho reduzido? (padrão: false)
 }
 
 export const Btn = ({
@@ -46,7 +44,7 @@ export const Btn = ({
         padding: small ? "8px 16px" : "16px 32px", // small = padding menor
         fontSize: small ? 12 : 14,
         fontWeight: 700,
-        borderRadius: 9999,  // totalmente arredondado (pill shape)
+        borderRadius: 9999, // totalmente arredondado (pill shape)
         cursor: "pointer",
         width: full ? "100%" : "auto", // full = ocupa toda a largura do container
         lineHeight: 1,

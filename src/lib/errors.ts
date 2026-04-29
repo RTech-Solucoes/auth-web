@@ -2,7 +2,7 @@ import { ApiError } from "@/services/api";
 
 // Formato padrão de mensagem de erro para exibir na UI
 export type ErrorMessage = {
-  title: string;       // título curto do erro
+  title: string; // título curto do erro
   description: string; // descrição detalhada para o usuário
 };
 

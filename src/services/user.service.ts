@@ -8,7 +8,7 @@ export interface User {
   firstName: string | null;
   lastName: string | null;
   tenantId: string | null; // null = super usuário sem tenant
-  status: string;          // active, inactive ou suspended
+  status: string; // active, inactive ou suspended
 }
 
 export const userService = {

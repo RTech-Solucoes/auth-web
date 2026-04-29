@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { RtechIcon } from "@/components/shared/RtechIcon";
 import { PermissionGuard } from "@/components/shared/PermissionGuard";
-import { LayoutDashboard, Users, Settings } from "lucide-react";
+import { LayoutDashboard, Users, Settings, UserCircle } from "lucide-react";
 import type { Permission } from "@/types/auth.roles";
 
 // Itens de navegação com permissão necessária para ver
@@ -17,22 +17,30 @@ const NAV_ITEMS: {
 }[] = [
   { href: "/dashboard", icon: <LayoutDashboard size={16} />, label: "Dashboard" },
   { href: "/users", icon: <Users size={16} />, label: "Usuários", permission: "users:read" },
-  { href: "/settings", icon: <Settings size={16} />, label: "Configurações", permission: "settings:read" },
+  {
+    href: "/settings",
+    icon: <Settings size={16} />,
+    label: "Configurações",
+    permission: "settings:read",
+  },
+  { href: "/profile", icon: <UserCircle size={16} />, label: "Perfil" },
 ];
 
 export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside style={{
-      width: "100%",
-      height: "100%",
-      background: "#00071b",
-      borderRight: "1px solid rgba(255,255,255,0.08)",
-      display: "flex",
-      flexDirection: "column",
-      padding: "16px 12px",
-    }}>
+    <aside
+      style={{
+        width: "100%",
+        height: "100%",
+        background: "#00071b",
+        borderRight: "1px solid rgba(255,255,255,0.08)",
+        display: "flex",
+        flexDirection: "column",
+        padding: "16px 12px",
+      }}
+    >
       {/* Ícone RTech */}
       <div style={{ padding: "8px 12px", marginBottom: 16 }}>
         <RtechIcon size={28} />

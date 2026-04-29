@@ -26,13 +26,15 @@ export function Breadcrumbs() {
   if (segments.length <= 1) return null;
 
   return (
-    <nav style={{
-      display: "flex",
-      alignItems: "center",
-      gap: 6,
-      padding: "8px 0",
-      marginBottom: 16,
-    }}>
+    <nav
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: 6,
+        padding: "8px 0",
+        marginBottom: 16,
+      }}
+    >
       {segments.map((segment, index) => {
         // Monta o href acumulando os segmentos anteriores
         // Ex: index 1 → "/dashboard/users"
@@ -43,25 +45,23 @@ export function Breadcrumbs() {
         return (
           <div key={href} style={{ display: "flex", alignItems: "center", gap: 6 }}>
             {/* Separador — não aparece no primeiro item */}
-            {index > 0 && (
-              <ChevronRight size={14} color="rgba(255,255,255,0.25)" />
-            )}
+            {index > 0 && <ChevronRight size={14} color="rgba(255,255,255,0.25)" />}
 
             {/* Último item — não é clicável, texto mais claro */}
             {isLast ? (
-              <span style={{ fontSize: 13, color: "#a6c1ed", fontWeight: 500 }}>
-                {label}
-              </span>
+              <span style={{ fontSize: 13, color: "#a6c1ed", fontWeight: 500 }}>{label}</span>
             ) : (
               /* Itens anteriores — clicáveis */
-              <Link href={href} style={{
-                fontSize: 13,
-                color: "rgba(255,255,255,0.4)",
-                textDecoration: "none",
-                transition: "color 0.15s ease",
-              }}
-                onMouseEnter={(e) => e.currentTarget.style.color = "rgba(255,255,255,0.7)"}
-                onMouseLeave={(e) => e.currentTarget.style.color = "rgba(255,255,255,0.4)"}
+              <Link
+                href={href}
+                style={{
+                  fontSize: 13,
+                  color: "rgba(255,255,255,0.4)",
+                  textDecoration: "none",
+                  transition: "color 0.15s ease",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.7)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.4)")}
               >
                 {label}
               </Link>

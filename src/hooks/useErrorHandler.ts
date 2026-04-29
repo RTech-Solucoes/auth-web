@@ -16,17 +16,20 @@ export function useErrorHandler() {
   const [error, setError] = useState<ErrorState | null>(null);
   const { logout } = useAuth();
 
-  const handleError = useCallback((err: unknown) => {
-    // Se for 401 fora do login — sessão expirada — faz logout
-    if (isUnauthorized(err)) {
-      logout();
-      return;
-    }
+  const handleError = useCallback(
+    (err: unknown) => {
+      // Se for 401 fora do login — sessão expirada — faz logout
+      if (isUnauthorized(err)) {
+        logout();
+        return;
+      }
 
-    // Converte o erro para mensagem amigável
-    const parsed = parseApiError(err);
-    setError(parsed);
-  }, [logout]);
+      // Converte o erro para mensagem amigável
+      const parsed = parseApiError(err);
+      setError(parsed);
+    },
+    [logout],
+  );
 
   const clearError = useCallback(() => {
     setError(null);

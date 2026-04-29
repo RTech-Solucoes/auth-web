@@ -11,7 +11,7 @@ export interface User {
   emailVerified: boolean;
   createdAt: string;
   updatedAt: string;
-  role?: Role;              // role do usuário (opcional — nem sempre vem do backend)
+  role?: Role; // role do usuário (opcional — nem sempre vem do backend)
   permissions?: Permission[]; // permissões customizadas além das do role
 }
 

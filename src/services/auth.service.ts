@@ -16,9 +16,13 @@ export const authService = {
   // Renova o par de tokens usando o refreshToken
   // skipAuth pois o accessToken pode estar expirado
   refresh: (refreshToken: string) =>
-    api.post<AuthResponse>("/auth/refresh", { refreshToken }, {
-      skipAuth: true,
-    }),
+    api.post<AuthResponse>(
+      "/auth/refresh",
+      { refreshToken },
+      {
+        skipAuth: true,
+      },
+    ),
 
   // Busca os dados do usuário logado — Authorization injetado automaticamente
   me: () => api.get<MeResponse>("/auth/me"),
@@ -26,7 +30,11 @@ export const authService = {
   // Envia email de recuperação de senha
   // skipAuth pois o usuário não está logado
   forgotPassword: (email: string) =>
-    api.post<void>("/auth/forgot-password", { email }, {
-      skipAuth: true,
-    }),
+    api.post<void>(
+      "/auth/forgot-password",
+      { email },
+      {
+        skipAuth: true,
+      },
+    ),
 };
