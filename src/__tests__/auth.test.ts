@@ -1,6 +1,11 @@
 import { describe, it, expect } from "vitest";
 import { parseApiError, isUnauthorized, isForbidden } from "@/lib/errors";
-import { hasPermission, hasAnyPermission, hasAllPermissions, isSuperAdmin } from "@/lib/permissions";
+import {
+  hasPermission,
+  hasAnyPermission,
+  hasAllPermissions,
+  isSuperAdmin,
+} from "@/lib/permissions";
 import { loginSchema, forgotPasswordSchema } from "@/lib/validations";
 import { ApiError } from "@/services/api";
 

@@ -52,7 +52,11 @@ describe("PageHeader", () => {
 
 describe("Card", () => {
   it("deve renderizar o conteúdo filho", () => {
-    render(<Card><p>Conteúdo do card</p></Card>);
+    render(
+      <Card>
+        <p>Conteúdo do card</p>
+      </Card>,
+    );
     expect(screen.getByText("Conteúdo do card")).toBeInTheDocument();
   });
 

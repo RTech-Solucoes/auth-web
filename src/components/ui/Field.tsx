@@ -4,13 +4,13 @@ import { useState } from "react";
 
 // Props do componente Field — input estilizado com o tema RTech
 interface FieldProps {
-  label: string;                          // texto do label acima do input
-  placeholder: string;                    // texto placeholder dentro do input
-  hint?: string;                          // texto clicável no canto direito do label (ex: "Esqueceu a senha?")
-  type?: string;                          // tipo do input: "text", "email", "password" (padrão: "text")
-  value?: string;                         // valor controlado pelo pai
-  onChange?: (value: string) => void;     // callback ao digitar — retorna o valor digitado
-  onHintClick?: () => void;              // callback ao clicar no hint
+  label: string; // texto do label acima do input
+  placeholder: string; // texto placeholder dentro do input
+  hint?: string; // texto clicável no canto direito do label (ex: "Esqueceu a senha?")
+  type?: string; // tipo do input: "text", "email", "password" (padrão: "text")
+  value?: string; // valor controlado pelo pai
+  onChange?: (value: string) => void; // callback ao digitar — retorna o valor digitado
+  onHintClick?: () => void; // callback ao clicar no hint
 }
 
 export const Field = ({
@@ -29,9 +29,7 @@ export const Field = ({
     <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
       {/* Linha do label — label à esquerda, hint à direita */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <span style={{ fontSize: 13, color: "var(--accent)", fontWeight: 500 }}>
-          {label}
-        </span>
+        <span style={{ fontSize: 13, color: "var(--accent)", fontWeight: 500 }}>{label}</span>
         {/* Hint só aparece se a prop for passada */}
         {hint && (
           <span
@@ -74,7 +72,7 @@ export const Field = ({
             color: "var(--t-white)",
             background: "transparent", // herda o background do container
             border: "none",
-            outline: "none",           // remove o outline padrão do browser
+            outline: "none", // remove o outline padrão do browser
             width: "100%",
           }}
         />

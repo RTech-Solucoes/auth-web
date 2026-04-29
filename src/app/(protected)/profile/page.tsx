@@ -13,36 +13,50 @@ export default function ProfilePage() {
 
   return (
     <div>
-      <PageHeader
-        title="Meu Perfil"
-        description="Informações da sua conta no Auth RTech."
-      />
+      <PageHeader title="Meu Perfil" description="Informações da sua conta no Auth RTech." />
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 16 }}>
-
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: 16,
+        }}
+      >
         {/* Card de informações pessoais */}
         <Card>
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+            <div
+              style={{
+                fontSize: 12,
+                color: "rgba(255,255,255,0.4)",
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
+              }}
+            >
               Informações Pessoais
             </div>
 
             {/* Avatar */}
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-              <div style={{
-                width: 48, height: 48,
-                background: "rgba(166,193,237,0.15)",
-                border: "1px solid rgba(166,193,237,0.3)",
-                borderRadius: "50%",
-                display: "flex", alignItems: "center", justifyContent: "center",
-              }}>
+              <div
+                style={{
+                  width: 48,
+                  height: 48,
+                  background: "rgba(166,193,237,0.15)",
+                  border: "1px solid rgba(166,193,237,0.3)",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
                 <User size={20} color="#a6c1ed" />
               </div>
               <div>
                 <div style={{ fontSize: 16, fontWeight: 600, color: "#ffffff" }}>
                   {user?.firstName && user?.lastName
                     ? `${user.firstName} ${user.lastName}`
-                    : user?.firstName ?? user?.email?.split("@")[0]}
+                    : (user?.firstName ?? user?.email?.split("@")[0])}
                 </div>
                 <Badge label="Ativo" variant="success" />
               </div>
@@ -67,20 +81,36 @@ export default function ProfilePage() {
         {/* Card de status da conta */}
         <Card>
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+            <div
+              style={{
+                fontSize: 12,
+                color: "rgba(255,255,255,0.4)",
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
+              }}
+            >
               Status da Conta
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div
+                style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}
+              >
                 <span style={{ fontSize: 13, color: "rgba(255,255,255,0.6)" }}>Sessão</span>
                 <Badge label="Autenticado" variant="success" />
               </div>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div
+                style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}
+              >
                 <span style={{ fontSize: 13, color: "rgba(255,255,255,0.6)" }}>Tenant</span>
-                <Badge label={user?.tenantId ? "Com tenant" : "Sem tenant"} variant={user?.tenantId ? "info" : "neutral"} />
+                <Badge
+                  label={user?.tenantId ? "Com tenant" : "Sem tenant"}
+                  variant={user?.tenantId ? "info" : "neutral"}
+                />
               </div>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div
+                style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}
+              >
                 <span style={{ fontSize: 13, color: "rgba(255,255,255,0.6)" }}>Permissões</span>
                 <Badge label={user?.role ?? "Sem role"} variant="neutral" />
               </div>

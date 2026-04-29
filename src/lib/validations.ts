@@ -5,20 +5,17 @@ import { z } from "zod";
 export const loginSchema = z.object({
   email: z
     .string()
-    .min(1, "Email é obrigatório")  // não pode ser vazio
-    .email("Email inválido"),        // deve ter formato válido (ex: a@b.com)
+    .min(1, "Email é obrigatório") // não pode ser vazio
+    .email("Email inválido"), // deve ter formato válido (ex: a@b.com)
   password: z
     .string()
-    .min(1, "Senha é obrigatória")                      // não pode ser vazio
-    .min(6, "Senha deve ter no mínimo 6 caracteres"),   // mínimo 6 caracteres
+    .min(1, "Senha é obrigatória") // não pode ser vazio
+    .min(6, "Senha deve ter no mínimo 6 caracteres"), // mínimo 6 caracteres
 });
 
 // Schema de validação do formulário de recuperação de senha
 export const forgotPasswordSchema = z.object({
-  email: z
-    .string()
-    .min(1, "Email é obrigatório")
-    .email("Email inválido"),
+  email: z.string().min(1, "Email é obrigatório").email("Email inválido"),
 });
 
 // Tipos inferidos automaticamente dos schemas

@@ -9,11 +9,11 @@ import type { User } from "@/types/user.types";
 
 // Define o que o contexto vai disponibilizar para toda a aplicação
 interface AuthContextData {
-  user: User | null;          // dados do usuário logado (null = não logado)
-  isLoading: boolean;         // true enquanto verifica a sessão no bootstrap
-  isAuthenticated: boolean;   // true se há usuário logado
+  user: User | null; // dados do usuário logado (null = não logado)
+  isLoading: boolean; // true enquanto verifica a sessão no bootstrap
+  isAuthenticated: boolean; // true se há usuário logado
   setUser: (user: User | null) => void; // atualiza o usuário manualmente
-  logout: () => void;         // faz logout completo
+  logout: () => void; // faz logout completo
 }
 
 // Cria o contexto com valor padrão vazio
@@ -68,13 +68,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []); // [] = executa só uma vez, ao montar o componente
 
   return (
-    <AuthContext.Provider value={{
-      user,
-      isLoading,
-      isAuthenticated: !!user, // converte user para boolean
-      setUser,
-      logout,
-    }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        isLoading,
+        isAuthenticated: !!user, // converte user para boolean
+        setUser,
+        logout,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

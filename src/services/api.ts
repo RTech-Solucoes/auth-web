@@ -7,9 +7,9 @@ const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
 // Estende o Error padrão do JS adicionando status HTTP e dados extras
 export class ApiError extends Error {
   constructor(
-    public status: number,   // código HTTP (401, 404, 500, etc.)
-    public message: string,  // mensagem de erro
-    public data?: unknown    // dados extras vindos do backend (opcional)
+    public status: number, // código HTTP (401, 404, 500, etc.)
+    public message: string, // mensagem de erro
+    public data?: unknown, // dados extras vindos do backend (opcional)
   ) {
     super(message);
     this.name = "ApiError";
@@ -18,10 +18,10 @@ export class ApiError extends Error {
 
 // Opções extras além do RequestInit padrão do fetch
 interface RequestOptions extends RequestInit {
-  token?: string;      // token manual (sobrescreve o da sessão)
-  tenantId?: string;   // tenantId manual (sobrescreve o da sessão)
-  skipAuth?: boolean;  // true = não injeta o Authorization (ex: login, registro)
-  _retry?: boolean;    // controle interno — evita loop infinito no refresh
+  token?: string; // token manual (sobrescreve o da sessão)
+  tenantId?: string; // tenantId manual (sobrescreve o da sessão)
+  skipAuth?: boolean; // true = não injeta o Authorization (ex: login, registro)
+  _retry?: boolean; // controle interno — evita loop infinito no refresh
 }
 
 // Processa a resposta do fetch e lança ApiError se não for ok
@@ -34,11 +34,7 @@ async function handleResponse<T>(response: Response): Promise<T> {
 
   // Se não foi ok (status >= 400), lança erro com os dados do backend
   if (!response.ok) {
-    throw new ApiError(
-      response.status,
-      data.message || "Erro na requisição",
-      data
-    );
+    throw new ApiError(response.status, data.message || "Erro na requisição", data);
   }
 
   return data as T;
@@ -71,10 +67,7 @@ async function refreshTokens(): Promise<boolean> {
 }
 
 // Função central que faz todas as requisições HTTP
-async function request<T>(
-  endpoint: string,
-  options: RequestOptions = {}
-): Promise<T> {
+async function request<T>(endpoint: string, options: RequestOptions = {}): Promise<T> {
   const { token, tenantId, skipAuth, _retry, ...fetchOptions } = options;
 
   const headers: Record<string, string> = {

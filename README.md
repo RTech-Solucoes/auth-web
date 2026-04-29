@@ -48,15 +48,15 @@ NODE_ENV=development
 
 ## Scripts
 
-| Comando                | Descrição                    |
-|------------------------|------------------------------|
-| `npm run dev`          | Servidor de desenvolvimento  |
-| `npm run build`        | Build de produção            |
-| `npm run start`        | Inicia build de produção     |
-| `npm run lint`         | Verificar ESLint             |
-| `npm run lint:fix`     | Corrigir erros de lint       |
-| `npm run format`       | Formatar com Prettier        |
-| `npm run format:check` | Verificar formatação         |
+| Comando                | Descrição                   |
+| ---------------------- | --------------------------- |
+| `npm run dev`          | Servidor de desenvolvimento |
+| `npm run build`        | Build de produção           |
+| `npm run start`        | Inicia build de produção    |
+| `npm run lint`         | Verificar ESLint            |
+| `npm run lint:fix`     | Corrigir erros de lint      |
+| `npm run format`       | Formatar com Prettier       |
+| `npm run format:check` | Verificar formatação        |
 
 ## Estrutura de Pastas
 

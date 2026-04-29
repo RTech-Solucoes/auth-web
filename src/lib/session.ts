@@ -26,13 +26,13 @@ function deleteCookie(name: string) {
 
 export const session = {
   // Lê o accessToken salvo — null se não existir ou se estiver no servidor
-  getAccessToken: () => isClient() ? localStorage.getItem(KEYS.accessToken) : null,
+  getAccessToken: () => (isClient() ? localStorage.getItem(KEYS.accessToken) : null),
 
   // Lê o refreshToken salvo
-  getRefreshToken: () => isClient() ? localStorage.getItem(KEYS.refreshToken) : null,
+  getRefreshToken: () => (isClient() ? localStorage.getItem(KEYS.refreshToken) : null),
 
   // Lê o tenantId salvo
-  getTenantId: () => isClient() ? localStorage.getItem(KEYS.tenantId) : null,
+  getTenantId: () => (isClient() ? localStorage.getItem(KEYS.tenantId) : null),
 
   // Salva o par de tokens após login ou refresh bem-sucedido
   // Salva no localStorage para uso nas requisições HTTP

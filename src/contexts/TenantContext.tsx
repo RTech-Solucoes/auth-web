@@ -11,10 +11,10 @@ interface Tenant {
 
 // Define o que o contexto vai disponibilizar para toda a aplicação
 interface TenantContextData {
-  tenant: Tenant | null;                        // tenant ativo (null = sem tenant)
-  isLoading: boolean;                           // carregando dados do tenant
-  setTenant: (tenant: Tenant | null) => void;   // troca o tenant ativo
-  clearTenant: () => void;                      // limpa o tenant ativo
+  tenant: Tenant | null; // tenant ativo (null = sem tenant)
+  isLoading: boolean; // carregando dados do tenant
+  setTenant: (tenant: Tenant | null) => void; // troca o tenant ativo
+  clearTenant: () => void; // limpa o tenant ativo
 }
 
 const TenantContext = createContext<TenantContextData>({} as TenantContextData);
@@ -35,7 +35,7 @@ export function TenantProvider({ children }: { children: React.ReactNode }) {
   function setTenant(tenant: Tenant | null) {
     if (tenant) {
       session.setTenantId(tenant.id); // persiste no localStorage
-      setTenantState(tenant);          // atualiza o estado React
+      setTenantState(tenant); // atualiza o estado React
     } else {
       clearTenant();
     }

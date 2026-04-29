@@ -30,20 +30,20 @@ export function PermissionGuard({
 
   // Verifica se tem permissão
   const role = user?.role as Role;
-  const customPermissions = user?.permissions as Permission[] ?? [];
+  const customPermissions = (user?.permissions as Permission[]) ?? [];
 
- let allowed = true;
+  let allowed = true;
 
-// Se não tem role definido, permite tudo — backend ainda não retorna role
-if (!role) {
-  allowed = true;
-} else if (isSuperAdmin(role)) {
-  allowed = true;
-} else if (permission) {
-  allowed = hasPermission(role, permission, customPermissions);
-} else if (anyOf && anyOf.length > 0) {
-  allowed = hasAnyPermission(role, anyOf, customPermissions);
-}
+  // Se não tem role definido, permite tudo — backend ainda não retorna role
+  if (!role) {
+    allowed = true;
+  } else if (isSuperAdmin(role)) {
+    allowed = true;
+  } else if (permission) {
+    allowed = hasPermission(role, permission, customPermissions);
+  } else if (anyOf && anyOf.length > 0) {
+    allowed = hasAnyPermission(role, anyOf, customPermissions);
+  }
 
   // Se redirect=true e não tem permissão, redireciona para /403
   useEffect(() => {

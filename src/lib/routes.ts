@@ -2,12 +2,7 @@
 // Usado pelo middleware para proteger rotas autenticadas
 
 // Rotas públicas — acessíveis sem autenticação
-export const PUBLIC_ROUTES = [
-  "/login",
-  "/forgot-password",
-  "/403",
-  "/404",
-];
+export const PUBLIC_ROUTES = ["/login", "/forgot-password", "/403", "/404"];
 
 // Rota padrão após login bem-sucedido (quando não há ?origem=)
 export const DEFAULT_REDIRECT = "/dashboard";

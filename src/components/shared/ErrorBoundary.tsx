@@ -42,15 +42,17 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
 
       // Fallback padrão — mensagem de erro inline sem quebrar o layout
       return (
-        <div style={{
-          background: "rgba(248,113,113,0.08)",
-          border: "1px solid rgba(248,113,113,0.2)",
-          borderRadius: 8,
-          padding: "16px 20px",
-          display: "flex",
-          flexDirection: "column",
-          gap: 8,
-        }}>
+        <div
+          style={{
+            background: "rgba(248,113,113,0.08)",
+            border: "1px solid rgba(248,113,113,0.2)",
+            borderRadius: 8,
+            padding: "16px 20px",
+            display: "flex",
+            flexDirection: "column",
+            gap: 8,
+          }}
+        >
           <div style={{ fontSize: 14, fontWeight: 500, color: "#f87171" }}>
             Algo deu errado nesta seção
           </div>

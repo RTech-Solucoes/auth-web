@@ -23,7 +23,7 @@ export function createLazy<T extends React.ComponentType<unknown>>(
   options?: {
     ssr?: boolean;
     loading?: () => React.ReactNode;
-  }
+  },
 ) {
   return dynamic(importFn, {
     ssr: options?.ssr ?? true,

@@ -8,6 +8,5 @@ export const profileService = {
   getProfile: () => api.get<{ user: Profile }>("/auth/me"),
 
   // Atualiza o perfil do usuário logado
-  updateProfile: (id: string, data: UpdateProfileRequest) =>
-    api.put<Profile>(`/users/${id}`, data),
+  updateProfile: (id: string, data: UpdateProfileRequest) => api.put<Profile>(`/users/${id}`, data),
 };

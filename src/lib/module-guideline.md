@@ -64,11 +64,7 @@ export default function ReportsPage() {
 
 ```typescript
 // src/types/auth.roles.ts
-type Permission =
-  | "reports:read"
-  | "reports:create"
-  | "reports:update"
-  | "reports:delete"
+type Permission = "reports:read" | "reports:create" | "reports:update" | "reports:delete";
 
 // Adicionar nas permissões dos roles
 ```
@@ -84,14 +80,14 @@ describe("reportService", () => {
 
 ## Convenções obrigatórias
 
-| Item | Padrão | Exemplo |
-|------|--------|---------|
-| Componentes | PascalCase | `ReportCard.tsx` |
-| Hooks | camelCase + `use` | `useReports.ts` |
-| Services | camelCase + `Service` | `reportService.ts` |
-| Types | PascalCase | `Report`, `ReportProps` |
-| Testes | mesmo nome + `.test` | `report.test.ts` |
-| Commits | Conventional Commits | `feat(reports): adicionar listagem` |
+| Item        | Padrão                | Exemplo                             |
+| ----------- | --------------------- | ----------------------------------- |
+| Componentes | PascalCase            | `ReportCard.tsx`                    |
+| Hooks       | camelCase + `use`     | `useReports.ts`                     |
+| Services    | camelCase + `Service` | `reportService.ts`                  |
+| Types       | PascalCase            | `Report`, `ReportProps`             |
+| Testes      | mesmo nome + `.test`  | `report.test.ts`                    |
+| Commits     | Conventional Commits  | `feat(reports): adicionar listagem` |
 
 ## Checklist antes de abrir PR
 

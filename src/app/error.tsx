@@ -22,8 +22,27 @@ export default function Error({
   const router = useRouter();
 
   return (
-    <div style={{ display: "flex", height: "100svh", width: "100%", alignItems: "center", justifyContent: "center", background: "#020610" }}>
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 24, maxWidth: 400, textAlign: "center", padding: "0 24px" }}>
+    <div
+      style={{
+        display: "flex",
+        height: "100svh",
+        width: "100%",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "#020610",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 24,
+          maxWidth: 400,
+          textAlign: "center",
+          padding: "0 24px",
+        }}
+      >
         <div style={{ fontSize: 48, fontWeight: 700, color: "#f87171" }}>Ops!</div>
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           <div style={{ fontSize: 20, fontWeight: 600, color: "#ffffff" }}>Algo deu errado</div>
@@ -33,11 +52,36 @@ export default function Error({
         </div>
         <div style={{ display: "flex", gap: 12 }}>
           {/* reset() tenta re-renderizar o componente sem recarregar a página */}
-          <button onClick={reset} style={{ background: "radial-gradient(ellipse 150% 200% at 44% 100%, #3d91ff 0%, #276cc8 20%, #104791 40%, #0c336a 70%, #082044 100%)", border: "1px solid #002159", borderRadius: 9999, padding: "10px 20px", cursor: "pointer", fontSize: 14, fontWeight: 600, color: "#ffffff" }}>
+          <button
+            onClick={reset}
+            style={{
+              background:
+                "radial-gradient(ellipse 150% 200% at 44% 100%, #3d91ff 0%, #276cc8 20%, #104791 40%, #0c336a 70%, #082044 100%)",
+              border: "1px solid #002159",
+              borderRadius: 9999,
+              padding: "10px 20px",
+              cursor: "pointer",
+              fontSize: 14,
+              fontWeight: 600,
+              color: "#ffffff",
+            }}
+          >
             Tentar novamente
           </button>
           {/* Fallback — volta para o login se não conseguir recuperar */}
-          <button onClick={() => router.push("/login")} style={{ background: "transparent", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 9999, padding: "10px 20px", cursor: "pointer", fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.7)" }}>
+          <button
+            onClick={() => router.push("/login")}
+            style={{
+              background: "transparent",
+              border: "1px solid rgba(255,255,255,0.15)",
+              borderRadius: 9999,
+              padding: "10px 20px",
+              cursor: "pointer",
+              fontSize: 14,
+              fontWeight: 600,
+              color: "rgba(255,255,255,0.7)",
+            }}
+          >
             Voltar ao login
           </button>
         </div>
