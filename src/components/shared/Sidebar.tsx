@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { RtechIcon } from "@/components/shared/RtechIcon";
 import { PermissionGuard } from "@/components/shared/PermissionGuard";
-import { LayoutDashboard, Users, Settings } from "lucide-react";
+import { LayoutDashboard, Users, Settings, UserCircle } from "lucide-react";
 import type { Permission } from "@/types/auth.roles";
 
 // Itens de navegação com permissão necessária para ver
@@ -18,6 +18,7 @@ const NAV_ITEMS: {
   { href: "/dashboard", icon: <LayoutDashboard size={16} />, label: "Dashboard" },
   { href: "/users", icon: <Users size={16} />, label: "Usuários", permission: "users:read" },
   { href: "/settings", icon: <Settings size={16} />, label: "Configurações", permission: "settings:read" },
+  { href: "/profile", icon: <UserCircle size={16} />, label: "Perfil" },
 ];
 
 export function Sidebar() {

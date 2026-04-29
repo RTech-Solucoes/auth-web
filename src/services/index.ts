@@ -4,3 +4,4 @@ export { api, ApiError } from "./api";
 export { authService } from "./auth.service";
 export { userService } from "./user.service";
 export { tenantService } from "./tenant.service";
+export { profileService } from "./profile.service";
